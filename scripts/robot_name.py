@@ -2,7 +2,7 @@ import string
 import random
 
 
-used = []
+used = set()
 
 
 def generateName():
@@ -35,11 +35,12 @@ class Robot:
     def check_name(self):
         while self.name in used:
             self.name = generateName()
-        used.append(self.name)
+        used.add(self.name)
         return self.name
 
     def get_name(self):
         self.name = generateName()
+        self.name = self.check_name()
         return self.name
 
 
