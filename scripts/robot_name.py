@@ -4,31 +4,12 @@ import random
 
 used = set()
 
-char = ''.join(random.SystemRandom().choices(
-    string.ascii_uppercase, k=2))
-
 
 def generateName():
-    characters = []
     char = ''.join(random.SystemRandom().choices(string.ascii_uppercase, k=2))
     num = ''.join(random.SystemRandom().choices(string.digits, k=3))
     randomName = char + num
-    '''
-    for j in range(0, 2):
-        characters.append(random.choice(string.ascii_uppercase))
-    for i in range(0, 3):
-        characters.append(str(random.randint(0, 9)))
-    separator = ''
-    randomName = separator.join(characters)
-    '''
     return randomName
-
-
-def check_name(str, set_names):
-    while str in set_names:
-        str = generateName()
-    set_names.add(str)
-    return set_names
 
 
 class Robot:
@@ -50,16 +31,3 @@ class Robot:
         self.name = generateName()
         self.name = self.check_name()
         return self.name
-
-
-r = Robot()
-print(r.name)
-print(r.reset())
-name2 = r.name
-print(name2)
-
-r2 = Robot()
-print(r2.name)
-
-
-print(used)
