@@ -4,15 +4,23 @@ import random
 
 used = set()
 
+char = ''.join(random.SystemRandom().choices(
+    string.ascii_uppercase, k=2))
+
 
 def generateName():
     characters = []
+    char = ''.join(random.SystemRandom().choices(string.ascii_uppercase, k=2))
+    num = ''.join(random.SystemRandom().choices(string.digits, k=3))
+    randomName = char + num
+    '''
     for j in range(0, 2):
         characters.append(random.choice(string.ascii_uppercase))
     for i in range(0, 3):
         characters.append(str(random.randint(0, 9)))
     separator = ''
     randomName = separator.join(characters)
+    '''
     return randomName
 
 
