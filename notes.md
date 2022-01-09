@@ -7,6 +7,8 @@ def generateName():
     randomName = char + num -> O(n^2) 🔥 Concatenating strings is not efficient, it is better to leverage the str.join which is O(n)
     return randomName O(1)
 
+    -> Total time complexity O(n^2)
+
 
 class Robot:
     def __init__(self):
