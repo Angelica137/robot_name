@@ -6,9 +6,12 @@ used = set()
 
 
 def generateName():
-    char = ''.join(random.SystemRandom().choices(string.ascii_uppercase, k=2))
-    num = ''.join(random.SystemRandom().choices(string.digits, k=3))
-    randomName = char + num
+    name_parts = []
+    name_parts.append(
+        ''.join(random.SystemRandom().choices(string.ascii_uppercase, k=2)))
+    name_parts.append(
+        ''.join(random.SystemRandom().choices(string.digits, k=3)))
+    randomName = ''.join(name_parts)
     return randomName
 
 
