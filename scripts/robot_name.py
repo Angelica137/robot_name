@@ -10,7 +10,7 @@ def generateName():
     name_parts.append(
         ''.join(random.SystemRandom().choices(string.ascii_uppercase, k=2)))
     name_parts.append(
-        ''.join(random.SystemRandom().choices(string.digits, k=3)))
+        str(random.SystemRandom().randint(100, 999)))
     randomName = ''.join(name_parts)
     return randomName
 
