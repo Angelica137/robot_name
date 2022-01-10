@@ -1,16 +1,15 @@
 used = set() -> time complexity O(1)
 
 
-
 def generateName():
     name_parts = [] -> O(1)
     name_parts.append(
-        ''.join(random.SystemRandom().choices(string.ascii_uppercase, k=2))) -> O(n)
+        ''.join(random.SystemRandom().choices(string.ascii_uppercase, k=2)))  -> O(1) + O(1) + O(n) + O(1)
     name_parts.append(
-        ''.join(random.SystemRandom().choices(string.digits, k=3))) -> O(n)
+        str(random.SystemRandom().randint(100, 999))) -> O(1) + O(1)
     randomName = ''.join(name_parts) -> O(n)
-    return randomName
-     -> TOTAL O(n)
+    return randomName -> O(1)
+    -> TOTAL O(n)
 
 
 
